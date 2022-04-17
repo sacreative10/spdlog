@@ -6,6 +6,9 @@ project "spdlog"
 	staticruntime "on"
 	files { "**.h", "**.cpp" }
 	includedirs { "include" }
+	filter "system:linux"
+		includedirs { "/usr/include/elogind" }
+
 	symbols "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
